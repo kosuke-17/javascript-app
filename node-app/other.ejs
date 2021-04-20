@@ -7,9 +7,7 @@
   <title><%=title %></title>
   
   <link rel="stylesheet" 
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/
-    bootstrap.min.css"
-  crossorigin="anonymous">
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 
 <body class="container">
@@ -18,6 +16,11 @@
   </header>
   <div role="main">
     <p><%=content %></p>
+    <% var id = 0; %>
+    <% for(var key in data) { %>
+    <%- include('data_item',
+        {id:++id, key:key, val:[data[key]]}) %>
+    <% } %>
     <p><a href="/">Index Pageに移動 &gt;&gt;</a></p>
   </div>
 </body>
